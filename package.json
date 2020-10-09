@@ -4,8 +4,15 @@
   "description": "web-app for renting a movie",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "npm run lint",
+    "prepush": "npm run test"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "husky": "^4.3.0"
+  }
 }
