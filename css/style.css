@@ -1,0 +1,30 @@
+.parallax-container {
+    height: 20em;
+}
+
+footer img {
+    width: 30%;
+}
+
+.socmed {
+    margin-left: 1rem;
+}
+
+.section {
+    margin-top: 1rem;
+}
+
+#genre-list .card.col {
+    height: 2em;
+}
+
+@media screen and (max-width: 670px) {
+    .parallax-container {
+        height: 13em;
+    }
+
+    .slider,
+    .slider .slides {
+        height: 250px !important;
+    }
+}

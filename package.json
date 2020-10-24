@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./",
     "precommit": "npm run lint",
     "prepush": "npm run test"
   },
@@ -14,5 +15,8 @@
     "eslint": "^7.10.0",
     "eslint-config-airbnb": "^18.2.0",
     "husky": "^4.3.0"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
   }
 }

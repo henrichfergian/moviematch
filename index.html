@@ -3,14 +3,79 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Moviematch" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moviematch</title>
+    <meta name="theme-color" content="#97d8eb" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <nav>
+    <header>
+        <nav class="blue lighten-1" role="navigation">
+            <div class="nav-wrapper container">
+                <a href="#home" class="brand-logo" id="logo-container">Moviematch</a>
+                <a href="#" class="sidenav-trigger" data-target="nav-mobile"><i class="material-icons">menu</i></a>
+                <ul class="right">
+                    <li><a href="#search" class="waves-effect waves-light search"><i class="material-icons">search</i></a></li></li>
+                </ul>
+                <ul class="topnav right hide-on-med-and-down"></ul>
+                <ul class="sidenav" id="nav-mobile"></ul>
+            </div>
+        </nav>
+    </header>
 
-    </nav>
+    <main>
+        <div id="body-content"></div>
+    </main>
+
+    <footer class="page-footer grey darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 l6 push-l6">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-instagram"></i><span class="socmed">Instagram</span></a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i><span class="socmed">Facebook</span></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"><span class="socmed">Twitter</span></i></a></li>
+                    </ul>
+                </div>
+                <div class="col s12 l6 pull-l6">
+                    <h5>Info</h5>
+                    <img src="/img/tmdb-icon.svg" alt="tmdb-icon" class="responsive-img">
+                    <p>This website uses the TMDb API</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright grey darken-4">
+            <div class="container center-align">Copyright &copy;2020 Moviematch</div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+        // registering service-worker
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/service-worker.js")
+                    .then(() => {
+                        console.log("ServiceWorker registered !")
+                    })
+                    .catch(() => {
+                        console.log("falied to register ServiceWorker !")
+                    });
+            });
+        } else {
+            console.log("your browser doesn't support ServiceWorker yet, please update or switch to another one !")
+        }
+    </script>
 </body>
 
 </html>
